@@ -1,5 +1,5 @@
 FROM centos:centos7
-
+MAINTAINER Chase Gilliam <chase.gilliam@gmail.com>
 ENV ERLANG_VERSION 19.1.5
 ENV ELIXIR_VERSION 1.3.4
 ENV PHOENIX_VERSION 1.2.1
