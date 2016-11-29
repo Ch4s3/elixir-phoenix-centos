@@ -13,8 +13,11 @@ RUN yum -y install --setopt=tsflags=nodocs epel-release wget unzip uuid less bzi
     yum -y install https://packages.erlang-solutions.com/erlang/esl-erlang/FLAVOUR_1_general/esl-erlang_${ERLANG_VERSION}~centos~7_amd64.rpm && \
     yum -y install esl-erlang-${ERLANG_VERSION} && \
     yum -y update && \
-    yum -y reinstall glibc-common glibc && \
-    yum clean all
+    yum -y reinstall glibc-common glibc
+
+RUN curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
+RUN yum -y install nodejs
+RUN yum clean all
 
 RUN cd /tmp && \
     wget https://github.com/elixir-lang/elixir/releases/download/v${ELIXIR_VERSION}/Precompiled.zip && \
