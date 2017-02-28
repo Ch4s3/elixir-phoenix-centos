@@ -1,7 +1,7 @@
 FROM centos:centos7
 MAINTAINER Chase Gilliam <chase.gilliam@gmail.com>
 ENV ERLANG_VERSION 19.1.5
-ENV ELIXIR_VERSION 1.3.4
+ENV ELIXIR_VERSION 1.4.0
 ENV PHOENIX_VERSION 1.2.1
 
 # Set the locale(en_US.UTF-8)
@@ -15,7 +15,7 @@ RUN yum -y install --setopt=tsflags=nodocs epel-release wget unzip uuid less bzi
     yum -y update && \
     yum -y reinstall glibc-common glibc
 
-RUN curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
+RUN curl --silent --location https://rpm.nodesource.com/setup_7.x | bash -
 RUN yum -y install nodejs
 RUN yum clean all
 
